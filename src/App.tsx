@@ -1,13 +1,12 @@
-import { Button } from "@/components/ui/button"
+import { AppLayout } from "./app/layout/AppLayout";
+import { Home } from "./app/pages/Home";
 
-const App = () => {
+function App() {
   return (
-    <div>
-
-         <h1 className="text-2xl font-bold bg-red-500">hello</h1>   
-         <Button>click</Button>   
-    </div>
-  )
+    <AppLayout>
+      <Home />
+    </AppLayout>
+  );
 }
 
-export default App
+export default App;
