@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { Maximize2, Bell } from "lucide-react";
+import { useThemeStore } from "@/store/useThemeStore";
+import { Maximize2, Bell, Sun, Moon } from "lucide-react";
 
 export const TopBar = () => {
+    const { theme, toggleTheme } = useThemeStore();
+
   return (
     <header className="h-12 border-b border-zinc-800 bg-zinc-950 flex items-center justify-between px-4">
       <div className="text-sm font-semibold text-white">
@@ -9,10 +12,24 @@ export const TopBar = () => {
       </div>
 
       <div className="flex items-center gap-2">
-        <Button variant="ghost" size="icon">
+        {/* theme toggle */}
+        <Button
+          variant="ghost"
+          size="icon"
+          className="text-zinc-400"
+          onClick={toggleTheme}
+          title="Toggle theme"
+        >
+          {theme === "dark" ? (
+            <Sun size={16} />
+          ) : (
+            <Moon size={16} />
+          )}
+        </Button>
+        <Button className="text-zinc-400  " variant="ghost" size="icon">
           <Bell size={16} />
         </Button>
-        <Button variant="ghost" size="icon">
+        <Button className="text-zinc-400" variant="ghost" size="icon">
           <Maximize2 size={16} />
         </Button>
       </div>
