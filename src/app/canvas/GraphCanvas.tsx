@@ -1,7 +1,6 @@
 import {
   ReactFlow,
   Background,
-  Controls,
   BackgroundVariant,
 } from "@xyflow/react";
 import type { Node, Edge } from "@xyflow/react";
@@ -49,7 +48,6 @@ export const GraphCanvas = () => {
         color="#3f3ff46" //subtle zinc-700
         
       />
-      <Controls     />
     </ReactFlow>
   </div>
   );
